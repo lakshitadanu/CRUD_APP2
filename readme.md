@@ -14,11 +14,11 @@
 
    e. Configure security group:
 
-       - Allow SSH (22) from your IP.
+      - Allow SSH (22) from your IP.
 
-       - Allow HTTP (80) for web traffic.
+      - Allow HTTP (80) for web traffic.
 
-       - Allow port 5000 for Flask (optional, for testing before using a reverse proxy).
+      - Allow port 5000 for Flask (optional, for testing before using a reverse proxy).
 
    f. Launch the instance and note down the Public IP or Public DNS.
 
@@ -122,11 +122,23 @@
 
    **Make sure you are inside the Server within virtual environment**
 
+   **a. If running locally:**
+   Purpose: Runs the Flask application directly as a Python script.
+
+
     python3 app.py
 
+
+   **b. If deploying on a server:**
+   
     export FLASK_APP=app.py
 
+   Purpose: Sets an environment variable so Flask knows which file to use when running the server. 
+
     flask run --host=0.0.0.0 --port=5000
+
+   Required when running Flask on an EC2 instance or remote server to allow access from other devices.
+
 
    **Access the app via:** 
    
